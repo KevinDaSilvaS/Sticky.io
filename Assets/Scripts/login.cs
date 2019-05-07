@@ -15,10 +15,11 @@ public InputField nomeJogador;
 public GameObject player;
 
 public static login instance;
-
+public GameObject canvastempo; 
 //singleton acesso todas as informações publicas
 
 	 private void Awake() {
+
 		if (instance==null)
 		{
 			instance=this;
@@ -27,6 +28,15 @@ public static login instance;
 		{
 			Destroy(gameObject);
 		}
+		
+		if (canvastempo)
+		{
+			Destroy(canvastempo);
+		}else
+		{
+			DontDestroyOnLoad(canvastempo);
+		}
+		
 	}
 	// Use this for initialization
 	void Start () {
@@ -79,9 +89,11 @@ public static login instance;
 		print(PhotonNetwork.CurrentRoom.Name);
 		print(PhotonNetwork.CurrentRoom.PlayerCount);
 
+		
 		if (PhotonNetwork.IsMasterClient)
 		{
 			PhotonNetwork.LoadLevel(1);
+			
 		}
 		//PhotonNetwork.Instantiate(player.name,new Vector3(Random.Range(1,8),Random.Range(1,8),Random.Range(1,8)),player.transform.rotation);
 	}

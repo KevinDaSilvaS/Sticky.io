@@ -5,12 +5,14 @@ using UnityEngine.UI;
 using Photon.Pun;
 public class TimerPartida : MonoBehaviour
 {
+    
 
     Text txt;
-    float time=180;
+    public float time=180;
     
-    float speed=1;
+    public float speed=1;
   
+  public PhotonView[] pvs;
     
     // Start is called before the first frame update
     void Start()
@@ -23,8 +25,8 @@ public class TimerPartida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-     // GetComponent<PhotonView>().RPC("temporizador",RpcTarget.All);
+       pvs=GameObject.FindObjectsOfType<PhotonView>();
+     // pvs.GameObject.GetComponent<PhotonView>().RPC("temporizador",RpcTarget.All);
     }
 
     [PunRPC]

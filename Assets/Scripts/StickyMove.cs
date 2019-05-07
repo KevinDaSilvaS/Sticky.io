@@ -98,7 +98,7 @@ public class StickyMove : MonoBehaviour
         {
             print("colidiu");
             StickyMove stmv=other.gameObject.GetComponent<StickyMove>();
-            if (stmv.size<this.size &&  other.gameObject.GetComponent<PhotonView>().IsMine)
+            if (stmv.size<this.size &&  !other.gameObject.GetComponent<PhotonView>().IsMine)
             {
                 size+=15;
                 print(stmv.size);
@@ -112,7 +112,7 @@ public class StickyMove : MonoBehaviour
                 print("venceu");
                 other.gameObject.transform.position=new Vector3(0,25,0);
                 
-            }else if (stmv.size>this.size &&  other.gameObject.GetComponent<PhotonView>().IsMine)
+            }else if (stmv.size>this.size &&  !other.gameObject.GetComponent<PhotonView>().IsMine)
             {
                 stmv.size+=15;
                 //this.transform.DetachChildren();
