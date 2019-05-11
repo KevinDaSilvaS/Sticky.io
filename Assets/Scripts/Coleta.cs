@@ -29,6 +29,9 @@ public class Coleta : MonoBehaviour {
 
 [PunRPC]
 	void bala(){
-		Destroy(this.gameObject);
+		//Destroy(this.gameObject);
+		this.transform.position=this.transform.position;
+		this.transform.localScale=this.transform.localScale;
+		this.transform.rotation=this.transform.rotation;
 	}
 }

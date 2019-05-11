@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/k7891/Desktop/multiplayer/buildmultiplayer13/Sticky.io.exe
+C:/Users/k7891/Desktop/multiplayer/buildmultiplayer15/Sticky.io.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 Assets/Scenes/CenaPrincipal.unity
@@ -250,7 +250,7 @@ cd67f3e1e9ccac6db86c1564cea5a827 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 f941c3a384168571b7d90f58ec4986bc Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.InfosPanelPlaceholder
-d44efc0191aec68df143dacf63e5a21c Assembly-CSharp.dll:.login
+8c94afa9fe320006f149b2285a968f79 Assembly-CSharp.dll:.login
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.connection
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 6987e53805e8a29a4a553f91e9a02ba2 Cinemachine.dll:Cinemachine.CinemachineOrbitalTransposer
@@ -370,7 +370,7 @@ e80cf4684910fdd7f091d85a19a93603 Assembly-CSharp.dll:Photon.Pun.Demo.SlotRacer.S
 3dbccc5793489caad80e37a33f1d2d30 Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.IntInputField
 5421466ed6291c1ab2d1650a128005b2 PhotonUnityNetworking.Utilities.dll:Photon.Pun.UtilityScripts.PhotonLagSimulationGui
 71bb6a6b6c8f052f948db64c7dd3ca4f PhotonUnityNetworking.Utilities.dll:Photon.Pun.UtilityScripts.EventSystemSpawner
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TimerPartida
+03aed9903acd7584e1e56ed2f3180201 Assembly-CSharp.dll:.TimerPartida
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 48804c7edfd2998cdab1bf456d8dbfd0 Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.PlayerListView
 6ff1c52123c50b3d73f35cd0e2e65dfd Cinemachine.dll:Cinemachine.CinemachineSmoothPath

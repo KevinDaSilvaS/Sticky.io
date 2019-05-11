@@ -13,9 +13,12 @@ public InputField nomeJogador;
 
  //[SerializeField]
 public GameObject player;
-
+public float tempopartida = 180;
 public static login instance;
+Text txt;
 public GameObject canvastempo; 
+//public bool verifica=false;
+
 //singleton acesso todas as informações publicas
 
 	 private void Awake() {
@@ -24,24 +27,20 @@ public GameObject canvastempo;
 		{
 			instance=this;
 			DontDestroyOnLoad(this.gameObject);
+			
 		}else
 		{
 			Destroy(gameObject);
 		}
 		
-		if (canvastempo)
-		{
-			Destroy(canvastempo);
-		}else
-		{
-			DontDestroyOnLoad(canvastempo);
-		}
+	
 		
 	}
 	// Use this for initialization
 	void Start () {
 		//PhotonNetwork.ConnectUsingSettings();
 		PhotonNetwork.AutomaticallySyncScene=true;
+		 txt=GetComponentInChildren<Text>();
 	}
 	
 	public void btnconecta(){
@@ -52,11 +51,22 @@ public GameObject canvastempo;
 	}
 	// Update is called once per frame
 	void Update () {
-		
-		/*if (Input.GetKeyDown(KeyCode.Space))
+		/* print(tempopartida);
+		string seconds=  (tempopartida).ToString("000");
+			txt.text=  seconds;
+		if (verifica==true)
 		{
-			PhotonNetwork.Disconnect();
-		} */
+		    tempopartida-=Time.deltaTime*1;
+			if (tempopartida<=0)
+			{
+			
+				tempopartida=0;
+			}
+
+			
+						
+		}*/
+		
 	}
 
 	public override void OnConnectedToMaster() {
@@ -83,17 +93,19 @@ public GameObject canvastempo;
 		print("Nao existem salas");
 		PhotonNetwork.CreateRoom(null, new RoomOptions());
 	}
-
+	
 	public override void OnJoinedRoom(){
 		print("entrei");
 		print(PhotonNetwork.CurrentRoom.Name);
 		print(PhotonNetwork.CurrentRoom.PlayerCount);
 
+		canvastempo.SetActive(true);
 		
+
 		if (PhotonNetwork.IsMasterClient)
 		{
 			PhotonNetwork.LoadLevel(1);
-			
+			//verifica=true;
 		}
 		//PhotonNetwork.Instantiate(player.name,new Vector3(Random.Range(1,8),Random.Range(1,8),Random.Range(1,8)),player.transform.rotation);
 	}
