@@ -531,6 +531,11 @@ PrefabInstance:
       propertyPath: Countdown
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7137054800221937699, guid: dd0f11bbc04291843b4d82eb3d47deda,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0f11bbc04291843b4d82eb3d47deda, type: 3}
 --- !u!1 &855523664

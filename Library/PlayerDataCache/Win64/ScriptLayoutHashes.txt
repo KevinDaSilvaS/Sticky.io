@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/k7891/Desktop/multiplayer/buildmultiplayer15/Sticky.io.exe
+C:/Users/k7891/Desktop/multiplayer/buildmultiplayer16/Sticky.io.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 Assets/Scenes/CenaPrincipal.unity
@@ -250,7 +250,7 @@ cd67f3e1e9ccac6db86c1564cea5a827 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 f941c3a384168571b7d90f58ec4986bc Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.InfosPanelPlaceholder
-8c94afa9fe320006f149b2285a968f79 Assembly-CSharp.dll:.login
+0d288f04e2e8b665c0c7220a713fff2e Assembly-CSharp.dll:.login
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.connection
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 6987e53805e8a29a4a553f91e9a02ba2 Cinemachine.dll:Cinemachine.CinemachineOrbitalTransposer
@@ -491,3 +491,4 @@ cd67f3e1e9ccac6db86c1564cea5a827 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+3497171474795f076a7406fb3df24764 Assembly-CSharp.dll:.Tempo

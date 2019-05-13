@@ -173,6 +173,7 @@
      <Compile Include="Assets\Scripts\moveBala.cs" />
      <Compile Include="Assets\Scripts\rotacionar.cs" />
      <Compile Include="Assets\Scripts\StickyMove.cs" />
+     <Compile Include="Assets\Scripts\Tempo.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\TimerPartida.cs" />
      <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
