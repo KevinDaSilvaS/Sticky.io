@@ -244,6 +244,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   ui: {fileID: 0}
   thrust: 3
+  jogador: 
   size: 1
   respawn: 0
   podecolidir: 1

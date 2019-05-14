@@ -6,14 +6,17 @@ using Photon.Pun;
 using Photon.Realtime;
 public class Tempo : MonoBehaviour
 {
-    float GameTime=180f;
+    float GameTime=60f;
     float GameTimeMax;
     float GameTimeLeft;
     float GameTimeIntervalAt=0;
      public Text GameTimer;
+     public Text scores;
+     public GameObject canvascore;
     // Start is called before the first frame update
     void Start()
     {
+        canvascore.SetActive(false);
         GameTimeMax=GameTime;
         ActivateGameTimer();
     }
@@ -31,7 +34,7 @@ public class Tempo : MonoBehaviour
         if (timeleft<=0)
         {
             //GameTimeIntervalAt++;
-            float countdown= timeleft+180;
+            float countdown= timeleft+60;
             GameTimer.text=countdown.ToString();
         }else
         {
@@ -63,17 +66,42 @@ public class Tempo : MonoBehaviour
                 if (GameTimeLeft<=0)
                 {
                     GameTimeIntervalAt++;
-                    float countdown=180-GameTimeIntervalAt;
-                    if (GameTimeIntervalAt>=180)
+                    float countdown=60-GameTimeIntervalAt;
+                    if (GameTimeIntervalAt>=60)
                     {
                         GameTimeIntervalAt=0;
                         GetComponent<PhotonView>().RPC("RestartGame",RpcTarget.All,null);
+                        //RestartGame();
                     }
                 }
         }
     }
+int count;
+string nome;
+public GameObject[] score;
+    [PunRPC]
+    public void RestartGame(){
+        canvascore.SetActive(true);
+        //PhotonNetwork.LeaveRoom();
+        //PhotonNetwork.Disconnect();
+        //PhotonNetwork.LoadLevel(0);
+        count=PhotonNetwork.PlayerList.Length;
+        
+       // print(count);
 
-
+            score=GameObject.FindGameObjectsWithTag("Player");
+             foreach (GameObject point in score)
+              {
+                  StickyMove scale=point.GetComponent<StickyMove>();
+                  StickyMove nomes=point.GetComponent<StickyMove>();
+                  nome=nomes.jogador;
+                  scores.text=nome +" : "+ scale.size.ToString();
+                  print(scale.size);
+                GetComponent<PhotonView>().RPC("RestartGame",RpcTarget.All,scores);
+              }
+       
+        StopAllCoroutines();
+    }
 
 
 

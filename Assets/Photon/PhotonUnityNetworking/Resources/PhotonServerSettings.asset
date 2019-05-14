@@ -39,5 +39,6 @@ MonoBehaviour:
   - OnTriggerEnter
   - Timer
   - IncreaseGameTime
+  - RestartGame
   DisableAutoOpenWizard: 1
   ShowSettings: 1

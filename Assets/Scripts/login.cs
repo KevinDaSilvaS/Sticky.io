@@ -13,11 +13,11 @@ public InputField nomeJogador;
 
  //[SerializeField]
 public GameObject player;
-public float tempopartida = 180;
+
 public static login instance;
 Text txt;
 public GameObject canvastempo; 
-//public bool verifica=false;
+
 
 //singleton acesso todas as informações publicas
 
@@ -33,7 +33,7 @@ public GameObject canvastempo;
 			Destroy(gameObject);
 		}
 		
-	
+	canvastempo.SetActive(false);
 		
 	}
 	// Use this for initialization
@@ -51,22 +51,7 @@ public GameObject canvastempo;
 	}
 	// Update is called once per frame
 	void Update () {
-		/* print(tempopartida);
-		string seconds=  (tempopartida).ToString("000");
-			txt.text=  seconds;
-		if (verifica==true)
-		{
-		    tempopartida-=Time.deltaTime*1;
-			if (tempopartida<=0)
-			{
-			
-				tempopartida=0;
-			}
-
-			
-						
-		}*/
-		
+	
 	}
 
 	public override void OnConnectedToMaster() {
@@ -105,7 +90,7 @@ public GameObject canvastempo;
 		if (PhotonNetwork.IsMasterClient)
 		{
 			PhotonNetwork.LoadLevel(1);
-			//verifica=true;
+			
 		}
 		//PhotonNetwork.Instantiate(player.name,new Vector3(Random.Range(1,8),Random.Range(1,8),Random.Range(1,8)),player.transform.rotation);
 	}

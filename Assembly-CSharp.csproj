@@ -172,6 +172,7 @@
      <Compile Include="Assets\Scripts\move.cs" />
      <Compile Include="Assets\Scripts\moveBala.cs" />
      <Compile Include="Assets\Scripts\rotacionar.cs" />
+     <Compile Include="Assets\Scripts\Scores.cs" />
      <Compile Include="Assets\Scripts\StickyMove.cs" />
      <Compile Include="Assets\Scripts\Tempo.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />

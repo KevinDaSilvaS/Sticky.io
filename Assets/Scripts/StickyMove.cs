@@ -13,11 +13,11 @@ public class StickyMove : MonoBehaviour
     public GameObject ui;
     public float thrust=3;
 
-   
+   public string jogador;
     // Start is called before the first frame update
     void Start()
     {
-        
+        jogador=PhotonNetwork.NickName;
         //
         pv.GetComponent<PhotonView>();
 		if (pv.IsMine)
@@ -100,25 +100,25 @@ public class StickyMove : MonoBehaviour
             StickyMove stmv=other.gameObject.GetComponent<StickyMove>();
             if (stmv.size<this.size &&  !other.gameObject.GetComponent<PhotonView>().IsMine)
             {
-                size+=15;
+                //this.size+=15;
                 print(stmv.size);
                 print(size);
                 //other.transform.localScale=new Vector3(1,1,1);
                 //other.transform.DetachChildren();
                 //stmv.size=1;
                 stmv.StartCoroutine(Timer());
-               pv.RPC("Timer",RpcTarget.AllBuffered);
+              // pv.RPC("Timer",RpcTarget.AllBuffered);
                 //stmv.respawn=true;
                 print("venceu");
                 other.gameObject.transform.position=new Vector3(0,25,0);
                 
             }else if (stmv.size>this.size &&  !other.gameObject.GetComponent<PhotonView>().IsMine)
             {
-                stmv.size+=15;
+               // stmv.size+=15;
                 //this.transform.DetachChildren();
                // size=1;
                 StartCoroutine(Timer());
-                pv.RPC("Timer",RpcTarget.AllBuffered);
+               // pv.RPC("Timer",RpcTarget.AllBuffered);
                // respawn=true;
                 print("morreu");
                 this.gameObject.transform.position=new Vector3(0,25,0);
