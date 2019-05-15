@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/k7891/Desktop/multiplayer/buildmultiplayer17/Sticky.io.exe
+C:/Users/k7891/Desktop/multiplayer/buildmultiplayer18/Sticky.io.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 Assets/Scenes/CenaPrincipal.unity
@@ -405,7 +405,7 @@ d9864ada3db659b8d6f66a20aff414b3 PhotonUnityNetworking.dll:Photon.Pun.PhotonView
 c656dcc13ae391b68d594cc8f9c590b0 Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.OfflineModeProperty
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 55c5d4231b5b81f8762aca1b7e16819e Assembly-CSharp.dll:Photon.Pun.Demo.Asteroids.PlayerListEntry
-8b7d6bf74cdad5ecef0bee5a5d444af1 Assembly-CSharp.dll:.Tempo
+1fc2c2ed4999c3dd2cd251da9dba0828 Assembly-CSharp.dll:.Tempo
 0077fc8e4fbae67f80e80ebd534de5a0 Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 f8b139fcde9fda6214245df246415cc7 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 0077fc8e4fbae67f80e80ebd534de5a0 Vuforia.UnityExtensions.dll:Vuforia.AnchorStageBehaviour

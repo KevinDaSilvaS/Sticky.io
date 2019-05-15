@@ -6,7 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 public class Tempo : MonoBehaviour
 {
-    float GameTime=60f;
+    float GameTime=50f;
     float GameTimeMax;
     float GameTimeLeft;
     float GameTimeIntervalAt=0;
@@ -34,11 +34,11 @@ public class Tempo : MonoBehaviour
         if (timeleft<=0)
         {
             //GameTimeIntervalAt++;
-            float countdown= timeleft+60;
+            float countdown= timeleft+50;
             GameTimer.text=countdown.ToString();
         }else
         {
-            string minSec=string.Format("{0}:{1:00}" ,timeleft/60,timeleft%60);
+            string minSec=string.Format("{0}:{1:00}" ,timeleft/50,timeleft%50);
             GameTimer.text=minSec.ToString();
         }
     }
@@ -66,8 +66,8 @@ public class Tempo : MonoBehaviour
                 if (GameTimeLeft<=0)
                 {
                     GameTimeIntervalAt++;
-                    float countdown=60-GameTimeIntervalAt;
-                    if (GameTimeIntervalAt>=60)
+                    float countdown=50-GameTimeIntervalAt;
+                    if (GameTimeIntervalAt>=50)
                     {
                         GameTimeIntervalAt=0;
                         GetComponent<PhotonView>().RPC("RestartGame",RpcTarget.All,null);
@@ -78,27 +78,24 @@ public class Tempo : MonoBehaviour
     }
 int count;
 string nome;
-public GameObject[] score;
+public StickyMove[] score;
     [PunRPC]
     public void RestartGame(){
         canvascore.SetActive(true);
         //PhotonNetwork.LeaveRoom();
         //PhotonNetwork.Disconnect();
         //PhotonNetwork.LoadLevel(0);
+        score=(StickyMove[]) GameObject.FindObjectsOfType (typeof(StickyMove));
         count=PhotonNetwork.PlayerList.Length;
-        
-       // print(count);
-
-            score=GameObject.FindGameObjectsWithTag("Player");
-             foreach (GameObject point in score)
-              {
-                  StickyMove scale=point.GetComponent<StickyMove>();
-                  StickyMove nomes=point.GetComponent<StickyMove>();
-                  nome=nomes.jogador;
-                  scores.text=nome +" : "+ scale.size.ToString();
-                  print(scale.size);
-                GetComponent<PhotonView>().RPC("RestartGame",RpcTarget.All,scores);
-              }
+         List<string> badguys = new List<string>();
+       foreach (var player in score)
+       {
+           
+           
+           scores.text+=player.jogador + player.size.ToString() + score.Length +"\n";
+           badguys.Add(player.jogador + player.size.ToString() +"\n");
+       }
+       //scores.text=badguys.ToString() + "/n";
        
         StopAllCoroutines();
     }
