@@ -6,7 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 public class Tempo : MonoBehaviour
 {
-    float GameTime=15000f;
+    public float GameTime=60f;
     float GameTimeMax;
     public float GameTimeLeft;
     float GameTimeIntervalAt=0;
@@ -37,11 +37,11 @@ public class Tempo : MonoBehaviour
         if (timeleft<=0)
         {
             //GameTimeIntervalAt++;
-            float countdown= timeleft+15000;
+            float countdown= timeleft+60;
             GameTimer.text=countdown.ToString();
         }else
         {
-            string minSec=string.Format("{0}:{1:00}" ,timeleft/15000,timeleft%15000);
+            string minSec=string.Format("{0}:{1:00}" ,timeleft/60,timeleft%60);
             GameTimer.text=minSec.ToString();
         }
     }
@@ -71,8 +71,8 @@ public class Tempo : MonoBehaviour
                 if (GameTimeLeft<=0)
                 {
                     GameTimeIntervalAt++;
-                    float countdown=15000-GameTimeIntervalAt;
-                    if (GameTimeIntervalAt>=15000)
+                    float countdown=60-GameTimeIntervalAt;
+                    if (GameTimeIntervalAt>=60)
                     {
                         GameTimeIntervalAt=0;
                         GetComponent<PhotonView>().RPC("RestartGame",RpcTarget.All,null);

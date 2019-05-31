@@ -9,15 +9,19 @@ namespace Com.MyCompany.MyGame
 public class backButton : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
-  
-
+  public GameObject scores;
+  public Tempo resetTime;
      public override void OnLeftRoom()
         {
-            //PhotonNetwork.LoadLevel(1);
             SceneManager.LoadScene(0);
-           // PhotonNetwork.DestroyAll();
-            //PhotonNetwork.Disconnect();
             print("me desconecte pfffff");
+            resetTime.GameTime=60;
+            resetTime.GameTimeLeft=0f;
+            resetTime.ActivateGameTimer();
+            resetTime.IncreaseGameTime(0);
+            resetTime.StartCoroutine("MatchGameTimer");
+            scores.SetActive(false);
+
         }
 
     public void LeaveRoom()
@@ -26,8 +30,8 @@ public class backButton : MonoBehaviourPunCallbacks
             PhotonNetwork.LeaveRoom();
             PhotonNetwork.LeaveLobby();
             PhotonNetwork.DestroyAll();
-            //SceneManager.LoadScene(0);
-            //PhotonNetwork.Disconnect();
+            
+           
            
         }
     // Update is called once per frame
