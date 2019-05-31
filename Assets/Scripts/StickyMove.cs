@@ -34,8 +34,7 @@ public class StickyMove : MonoBehaviour
        print(respawn);
        cam=CamScript.target.transform;
        ui=CamScript.canvas;
-      // ui.SetActive(true);
-        //target=rotacionar.target.transform;
+
         if (respawn==false)
         {
             if (pv.IsMine)
@@ -43,26 +42,24 @@ public class StickyMove : MonoBehaviour
                 if (Input.GetKey(KeyCode.UpArrow))
                 {
                 
-                    //transform.Translate(new Vector3(0,0,2));
-                    this.transform.GetComponent<Rigidbody>().AddForce(cam.transform.forward * thrust*15);
+                   
+                    this.transform.GetComponent<Rigidbody>().AddForce(cam.transform.forward * thrust*/* 1*/5);
                 }
                 if (Input.GetKey(KeyCode.DownArrow))
                 {
                     
-                    //transform.Translate(new Vector3(0,0,-2));
-                    this.transform.GetComponent<Rigidbody>().AddForce( -cam.transform.forward * -thrust*-15);
+                    
+                    this.transform.GetComponent<Rigidbody>().AddForce( -cam.transform.forward * -thrust*-/* 1*/5);
                 }
                 if (Input.GetKey(KeyCode.LeftArrow))
                 {
-                    cam.transform.RotateAround(this.transform.position, new Vector3(0.0f, -/*1*/5.0f, 0.0f), 10 * Time.deltaTime * speedMod);
-                //target.transform.Translate(-Vector3.right * Time.deltaTime);
-                    //cam.transform.Rotate(this.transform.position*Time.deltaTime);
+                    cam.transform.RotateAround(this.transform.position, new Vector3(0.0f, -5.0f, 0.0f), 10 * Time.deltaTime * speedMod);
+               
                 }
                 if (Input.GetKey(KeyCode.RightArrow))
                 {
-                    cam.transform.RotateAround(this.transform.position, new Vector3(0.0f, /*1 */5.0f, 0.0f), 10 * Time.deltaTime * speedMod);
-                // target.transform.Translate(Vector3.right * Time.deltaTime);
-                    //target.transform.Rotate(new Vector3(0,1.5f,0)*Time.deltaTime);
+                    cam.transform.RotateAround(this.transform.position, new Vector3(0.0f, 5.0f, 0.0f), 10 * Time.deltaTime * speedMod);
+ 
                 }
             }
             
@@ -98,29 +95,17 @@ public class StickyMove : MonoBehaviour
         {
             print("colidiu");
             StickyMove stmv=other.gameObject.GetComponent<StickyMove>();
-            if (stmv.size<this.size &&  !other.gameObject.GetComponent<PhotonView>().IsMine)
+            if (stmv.size>this.size /* &&  !other.gameObject.GetComponent<PhotonView>().IsMine*/)
             {
                 //this.size+=15;
                 print(stmv.size);
-                print(size);
+                //print(size);
                 //other.transform.localScale=new Vector3(1,1,1);
                 //other.transform.DetachChildren();
                 //stmv.size=1;
-                stmv.StartCoroutine(Timer());
-              // pv.RPC("Timer",RpcTarget.AllBuffered);
-                //stmv.respawn=true;
+                /* stmv.StartCoroutine(Timer());*/
+
                 print("venceu");
-                other.gameObject.transform.position=new Vector3(0,25,0);
-                
-            }else if (stmv.size>this.size &&  !other.gameObject.GetComponent<PhotonView>().IsMine)
-            {
-               // stmv.size+=15;
-                //this.transform.DetachChildren();
-               // size=1;
-                StartCoroutine(Timer());
-               // pv.RPC("Timer",RpcTarget.AllBuffered);
-               // respawn=true;
-                print("morreu");
                 this.gameObject.transform.position=new Vector3(0,25,0);
                 
             }else
@@ -135,7 +120,7 @@ public class StickyMove : MonoBehaviour
      public bool podecolidir=true;
 
 
-    [PunRPC] 
+    //[PunRPC] 
     IEnumerator Timer(){
         respawn=true;
         Debug.Log("start");
@@ -147,6 +132,7 @@ public class StickyMove : MonoBehaviour
         
         
          StartCoroutine(tempocolisao());
+         StopCoroutine(Timer());
         Debug.Log("finalizou");
        
     }
@@ -166,7 +152,5 @@ public class StickyMove : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private void FixedUpdate() {
-       // this.transform.GetComponent<Rigidbody>().AddForce(new Vector3(unitV2.x,0,unitV2.y)*z*3);
-    }
+   
 }

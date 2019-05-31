@@ -6,13 +6,14 @@ using Photon.Pun;
 using Photon.Realtime;
 public class Tempo : MonoBehaviour
 {
-    float GameTime=50f;
+    float GameTime=15000f;
     float GameTimeMax;
-    float GameTimeLeft;
+    public float GameTimeLeft;
     float GameTimeIntervalAt=0;
      public Text GameTimer;
      public Text scores;
      public GameObject canvascore;
+     
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,9 @@ public class Tempo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(GameTimeLeft);
+        //print(GameTimeLeft);
+        //ActivateGameTimer();
+       // print(MatchGameTimer());
     }
    
 
@@ -34,11 +37,11 @@ public class Tempo : MonoBehaviour
         if (timeleft<=0)
         {
             //GameTimeIntervalAt++;
-            float countdown= timeleft+50;
+            float countdown= timeleft+15000;
             GameTimer.text=countdown.ToString();
         }else
         {
-            string minSec=string.Format("{0}:{1:00}" ,timeleft/50,timeleft%50);
+            string minSec=string.Format("{0}:{1:00}" ,timeleft/15000,timeleft%15000);
             GameTimer.text=minSec.ToString();
         }
     }
@@ -46,14 +49,16 @@ public class Tempo : MonoBehaviour
     public void ActivateGameTimer(){
         if (PhotonNetwork.IsMasterClient==true)
         {
-            StopCoroutine("MatchGameTimer");
+           // StopCoroutine("MatchGameTimer");
             StartCoroutine("MatchGameTimer");
         }else
         {
-            StopCoroutine("MatchGameTimer");
+           // StopCoroutine("MatchGameTimer");
+           // StartCoroutine("MatchGameTimer");
+           // 
         }
     }
-
+    [PunRPC]
     IEnumerator MatchGameTimer(){
         while (true)
         {
@@ -66,8 +71,8 @@ public class Tempo : MonoBehaviour
                 if (GameTimeLeft<=0)
                 {
                     GameTimeIntervalAt++;
-                    float countdown=50-GameTimeIntervalAt;
-                    if (GameTimeIntervalAt>=50)
+                    float countdown=15000-GameTimeIntervalAt;
+                    if (GameTimeIntervalAt>=15000)
                     {
                         GameTimeIntervalAt=0;
                         GetComponent<PhotonView>().RPC("RestartGame",RpcTarget.All,null);
@@ -77,25 +82,22 @@ public class Tempo : MonoBehaviour
         }
     }
 int count;
-string nome;
-public StickyMove[] score;
     [PunRPC]
     public void RestartGame(){
         canvascore.SetActive(true);
-        //PhotonNetwork.LeaveRoom();
-        //PhotonNetwork.Disconnect();
-        //PhotonNetwork.LoadLevel(0);
-        score=(StickyMove[]) GameObject.FindObjectsOfType (typeof(StickyMove));
-        count=PhotonNetwork.PlayerList.Length;
-         List<string> badguys = new List<string>();
-       foreach (var player in score)
+        
+        
+        GameTimeLeft=GameTime;
+        GameTimeIntervalAt=0;
+
+        foreach (var player in PhotonNetwork.PlayerList)
        {
            
+        
+           scores.text+=player +"\n";
            
-           scores.text+=player.jogador + player.size.ToString() + score.Length +"\n";
-           badguys.Add(player.jogador + player.size.ToString() +"\n");
        }
-       //scores.text=badguys.ToString() + "/n";
+       
        
         StopAllCoroutines();
     }

@@ -6,8 +6,8 @@ using Photon.Realtime;
 using UnityEngine.UI;
 
 public class login : MonoBehaviourPunCallbacks {
-[SerializeField]
-GameObject canvas;
+//[SerializeField]
+public GameObject canvas;
 //[SerializeField]
 public InputField nomeJogador;
 
@@ -38,6 +38,9 @@ public GameObject canvastempo;
 	}
 	// Use this for initialization
 	void Start () {
+		//canvas=GameObject.FindGameObjectWithTag("Canvas");
+		//canvastempo=GameObject.FindGameObjectWithTag("Finish");
+		//nomeJogador=canvas.GetComponentInChildren<InputField>();
 		//PhotonNetwork.ConnectUsingSettings();
 		PhotonNetwork.AutomaticallySyncScene=true;
 		 txt=GetComponentInChildren<Text>();
@@ -51,7 +54,7 @@ public GameObject canvastempo;
 	}
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	public override void OnConnectedToMaster() {

@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/k7891/Desktop/multiplayer/buildmultiplayer18/Sticky.io.exe
+C:/Users/k7891/Desktop/multiplayer/buildmultiplayer27/Sticky.io.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 Assets/Scenes/CenaPrincipal.unity
@@ -318,6 +318,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 a66794b62dbf044668a5f102bb7908c2 Cinemachine.dll:Cinemachine.CinemachineImpulseListener
 e6d75f1a9bc0c6f7085df0baa077e688 Cinemachine.dll:Cinemachine.CinemachineGroupComposer
 71bb6a6b6c8f052f948db64c7dd3ca4f Cinemachine.dll:Cinemachine.CinemachineSameAsFollowTarget
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Com.MyCompany.MyGame.backButton
 3dbccc5793489caad80e37a33f1d2d30 Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.Forms.LoadLevelUIForm
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Photon.Pun.Demo.Asteroids.Bullet
 d5b20eb1796b39c3552dfeaf7754cc73 Cinemachine.dll:Cinemachine.CinemachineBlendListCamera
@@ -331,7 +332,6 @@ aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 c4117cf32d2e7797e9e05272a419cd6e Cinemachine.dll:Cinemachine.Timeline.CinemachineShot
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 df21ffd1864551a3e43410f28754a73e Cinemachine.dll:Cinemachine.CinemachineConfiner
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Scores
 1e3d6222ff533d213aab144eb854a53b Cinemachine.dll:.CinemachineTouchInputMapper
 11bdd61587db747672b66c52442395d8 Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.AppVersionProperty
 cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
@@ -365,6 +365,7 @@ c0201dbecd85f700bcdff493a272631d Cinemachine.dll:Cinemachine.CinemachineImpulseS
 9db963832ef7feebd35f44e6ad6f646c PhotonUnityNetworking.Utilities.dll:Photon.Pun.UtilityScripts.OnJoinedInstantiate
 d7f7bc402888d42a0dbb080693e6863c Assembly-CSharp.dll:Photon.Pun.Demo.PunBasics.LoaderAnime
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
+ca9543050b94c25ebd8a6b6fd0b069e5 Assembly-CSharp.dll:.manager
 7221ab9307aaa6b66a416e2e4561f420 Assembly-CSharp.dll:.ScoreHelper
 e80cf4684910fdd7f091d85a19a93603 Assembly-CSharp.dll:Photon.Pun.Demo.SlotRacer.SlotLanes
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
@@ -405,7 +406,7 @@ d9864ada3db659b8d6f66a20aff414b3 PhotonUnityNetworking.dll:Photon.Pun.PhotonView
 c656dcc13ae391b68d594cc8f9c590b0 Assembly-CSharp.dll:Photon.Pun.Demo.Cockpit.OfflineModeProperty
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 55c5d4231b5b81f8762aca1b7e16819e Assembly-CSharp.dll:Photon.Pun.Demo.Asteroids.PlayerListEntry
-1fc2c2ed4999c3dd2cd251da9dba0828 Assembly-CSharp.dll:.Tempo
+93c86363c5c14e3e47c9409e9a3c77be Assembly-CSharp.dll:.Tempo
 0077fc8e4fbae67f80e80ebd534de5a0 Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 f8b139fcde9fda6214245df246415cc7 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 0077fc8e4fbae67f80e80ebd534de5a0 Vuforia.UnityExtensions.dll:Vuforia.AnchorStageBehaviour

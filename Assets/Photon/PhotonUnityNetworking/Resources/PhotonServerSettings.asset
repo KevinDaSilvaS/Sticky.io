@@ -40,5 +40,7 @@ MonoBehaviour:
   - Timer
   - IncreaseGameTime
   - RestartGame
+  - MatchGameTimer
+  - ActivateGameTimer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
